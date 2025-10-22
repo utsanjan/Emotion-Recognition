@@ -78,7 +78,7 @@ pip install -r requirements.txt
 ```
 
 ### 3️⃣ Download dataset
-Download FER2013 from Kaggle - [nicolejyt/facialexpressionrecognition](https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition). And place it in:
+Download FER2013 from [Kaggle - nicolejyt/facialexpressionrecognition](https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition). And place it in:
 ```bash
 data/fer2013.csv
 ```
