@@ -1,11 +1,11 @@
-# Facial Emotion Recognition (FER) — Capstone Project 🎭
+# Facial Emotion Recognition - Capstone Project 🎭
+[![Buy Me A Coffee](https://img.shields.io/open-vsx/stars/redhat/java?color=D8B024&label=buy%20me%20a%20coffee&style=flat)](https://www.buymeacoffee.com/utsanjan)‎ ‎
+[![](https://dcbadge.limes.pink/api/server/uavTPkr?style=flat)](https://discord.gg/ZuuWJm7MR3)‎ ‎ 
+[![](https://img.shields.io/github/license/utsanjan/Emotion-Recognition?logoColor=red&style=flat)](https://github.com/utsanjan/Emotion-Recognition/blob/main/LICENSE)‎ ‎
+[![](https://img.shields.io/github/languages/count/utsanjan/Emotion-Recognition?style=flat)](https://github.com/utsanjan/Emotion-Recognition/search?l=shell)‎ ‎
+[![](https://img.shields.io/github/languages/top/utsanjan/Emotion-Recognition?color=light%20green&style=flat)](https://github.com/utsanjan/Emotion-Recognition)‎ ‎
 
-A complete end-to-end project to **detect and classify human emotions** (Happy, Sad, Angry, etc.) from facial expressions using deep learning and computer vision.
-
----
-
-## 📘 Overview
-This repository implements **Facial Emotion Recognition (FER)** using:
+This project provides a comprehensive end-to-end solution for detecting and classifying human emotions - such as happiness, sadness, and anger - based on facial expressions. By leveraging deep learning and computer vision techniques, this repository delivers a state-of-the-art implementation of Facial Emotion Recognition (FER). This repository implements **Facial Emotion Recognition (FER)** using:
 - **Convolutional Neural Networks (CNNs)** for baseline learning.
 - **Transfer Learning** with **MobileNetV2** and **ResNet50** for improved accuracy.
 - **MTCNN** for face detection & cropping.
@@ -133,7 +133,7 @@ Press `q` to quit webcam window.
 
 ---
 
-## 🧬 Optional — DCGAN (Face Generation)
+## 🧬 Optional - DCGAN (Face Generation)
 Train GAN to generate facial expressions:
 ```bash
 python scripts/dcgan.py --data data/cropped_faces/train --out outputs/generated_faces --epochs 20000
@@ -141,7 +141,7 @@ python scripts/dcgan.py --data data/cropped_faces/train --out outputs/generated_
 
 ---
 
-## 🎵 Optional — Emotion-to-Music
+## 🎵 Optional - Emotion-to-Music
 Generate MIDI melody for any emotion:
 ```bash
 python scripts/emotion_to_midi.py --emotion Happy --out outputs/generated_music/happy.mid
@@ -177,12 +177,12 @@ python scripts/emotion_to_midi.py --emotion Happy --out outputs/generated_music/
 ## 🤝 Acknowledgements
 - FER2013 dataset by Pierre-Luc Carrier & Aaron Courville
 - Preprocessing logic inspired by [GSNCodes (GitHub)](https://github.com/GSNCodes)
-- Keras DCGAN example — © Keras Team
+- Keras DCGAN example - © Keras Team
 
 ---
 
 ## 📜 License
-This project is licensed under the MIT License — see LICENSE file for details.
+This project is licensed under the MIT License - see LICENSE file for details.
 
 ---
 
