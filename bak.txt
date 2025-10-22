@@ -1,0 +1,49 @@
+# Emotion-Recognition
+Use convolutional neural networks for precise facial emotion recognition with a specialized dataset
+
+fer_capstone_custom/
+├─ README.md ✅
+├─ requirements.txt ✅
+
+
+├─ data/
+│ ├─ fer2013.csv # original FER2013 CSV (if used) ✅
+│ ├─ cropped_faces/ # optional: face-cropped images per class
+│ └─ sample_images/
+
+
+├─ notebooks/ ✅
+│ ├─ 01_preprocess.ipynb ✅
+│ ├─ 02_train_baseline.ipynb ✅
+│ ├─ 03_train_transfer.ipynb ✅
+│ ├─ 04_evaluate.ipynb ✅
+│ └─ 05_webcam_demo.ipynb ✅
+
+
+├─ scripts/ ✅
+│ ├─ preprocess.py ✅
+│ ├─ train_baseline.py ✅
+│ ├─ train_transfer.py ✅
+│ ├─ evaluate.py ✅
+│ ├─ webcam_demo.py ✅
+│ ├─ dcgan.py ✅
+│ └─ emotion_to_midi.py ✅
+
+
+├─ models/ ✅
+│ ├─ baseline_cnn.h5 ✅
+│ ├─ mobilenet_emotion.h5 ✅
+│ └─ dcgan_generator.h5 ✅
+
+
+├─ outputs/
+│ ├─ figures/
+│ │ ├─ confusion_matrix.png
+│ │ └─ training_curves.png
+│ ├─ generated_faces/
+│ └─ generated_music/
+
+
+└─ utils/ ✅
+├─ mtcnn_face_crop.py ✅
+└─ data_loader.py ✅

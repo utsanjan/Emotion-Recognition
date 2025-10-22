@@ -1,0 +1,14 @@
+tensorflow>=2.10
+keras
+numpy
+pandas
+opencv-python
+mtcnn
+scikit-learn
+matplotlib
+seaborn
+tqdm
+Pillow
+imgaug
+pretty_midi
+mido
