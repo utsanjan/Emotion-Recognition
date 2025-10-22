@@ -1,4 +1,4 @@
-# Facial Emotion Recognition - Capstone Project 🎭
+# 🎭 Facial Emotion Recognition - Capstone Project
 [![Buy Me A Coffee](https://img.shields.io/open-vsx/stars/redhat/java?color=D8B024&label=buy%20me%20a%20coffee&style=flat)](https://www.buymeacoffee.com/utsanjan)‎ ‎
 [![](https://dcbadge.limes.pink/api/server/uavTPkr?style=flat)](https://discord.gg/ZuuWJm7MR3)‎ ‎ 
 [![](https://img.shields.io/github/license/utsanjan/Emotion-Recognition?logoColor=red&style=flat)](https://github.com/utsanjan/Emotion-Recognition/blob/main/LICENSE)‎ ‎
