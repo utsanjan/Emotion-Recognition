@@ -78,10 +78,7 @@ pip install -r requirements.txt
 ```
 
 ### 3️⃣ Download dataset
-Download FER2013 from Kaggle:  
-[https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition](https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition)
-
-Place it in:
+Download FER2013 from Kaggle - [nicolejyt/facialexpressionrecognition](https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition). And place it in:
 ```bash
 data/fer2013.csv
 ```
@@ -152,9 +149,6 @@ python scripts/emotion_to_midi.py --emotion Happy --out outputs/generated_music/
 - FER2013 dataset by Pierre-Luc Carrier & Aaron Courville
 - Preprocessing logic inspired by [GSNCodes (GitHub)](https://github.com/GSNCodes)
 - Keras DCGAN example - © Keras Team
-
-## 📜 License
-This project is licensed under the MIT License - see LICENSE file for details.
 
 ## 📬 Contact
 - Questions? Reach out on [Instagram](https://www.instagram.com/utsanjan/)
