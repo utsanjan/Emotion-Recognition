@@ -12,8 +12,6 @@ This project provides a comprehensive end-to-end solution for detecting and clas
 - **DCGAN** for generating synthetic faces.
 - Optional **MIDI music generation** based on predicted emotions.
 
----
-
 ## 🧩 Features
 ✅ Train baseline CNN on FER2013 dataset (48×48 grayscale).  
 ✅ Fine-tune transfer-learning model (MobileNetV2/ResNet50).  
@@ -21,8 +19,6 @@ This project provides a comprehensive end-to-end solution for detecting and clas
 ✅ Evaluate model using confusion matrix & classification report.  
 ✅ Generate synthetic faces via DCGAN.  
 ✅ Create emotion-based melodies (MIDI).
-
----
 
 ## 📂 Project Structure
 ```
@@ -92,15 +88,11 @@ Place it in:
 data/fer2013.csv
 ```
 
----
-
 ## 🧠 Preprocessing
 Convert FER CSV to cropped, normalized images:
 ```bash
 python scripts/preprocess.py --csv data/fer2013.csv --out data/cropped_faces --target-size 224 --use-mtcnn
 ```
-
----
 
 ## 🏋️‍♂️ Training
 
@@ -114,15 +106,11 @@ python scripts/train_baseline.py --data data/cropped_faces --epochs 25 --batch 6
 python scripts/train_transfer.py --data data/cropped_faces --arch mobilenet --epochs 30 --input-size 224
 ```
 
----
-
 ## 📊 Evaluation
 Generate confusion matrix and classification report:
 ```bash
 python scripts/evaluate.py --model models/mobilenet_emotion.h5 --data data/cropped_faces/val
 ```
-
----
 
 ## 🎥 Real-Time Demo
 Run live webcam emotion recognition:
@@ -131,15 +119,11 @@ python scripts/webcam_demo.py --model models/mobilenet_emotion.h5 --data-dir dat
 ```
 Press `q` to quit webcam window.
 
----
-
 ## 🧬 Optional - DCGAN (Face Generation)
 Train GAN to generate facial expressions:
 ```bash
 python scripts/dcgan.py --data data/cropped_faces/train --out outputs/generated_faces --epochs 20000
 ```
-
----
 
 ## 🎵 Optional - Emotion-to-Music
 Generate MIDI melody for any emotion:
@@ -147,13 +131,9 @@ Generate MIDI melody for any emotion:
 python scripts/emotion_to_midi.py --emotion Happy --out outputs/generated_music/happy.mid
 ```
 
----
-
 ## 🧾 Dataset References
 - [FER2013 (Kaggle)](https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition)
 - [UTKFace Cropped Dataset (Hugging Face)](https://huggingface.co/datasets/UTKFace)
-
----
 
 ## 🧪 Tech Stack
 - Python 3.10+
@@ -163,8 +143,6 @@ python scripts/emotion_to_midi.py --emotion Happy --out outputs/generated_music/
 - Matplotlib / Seaborn
 - PrettyMIDI for audio generation
 
----
-
 ## 📈 Results (Example)
 | Model              | Accuracy       | Notes                              |
 |--------------------|----------------|------------------------------------|
@@ -172,19 +150,13 @@ python scripts/emotion_to_midi.py --emotion Happy --out outputs/generated_music/
 | MobileNetV2 (TL)   | ~73–80%        | Transfer learning + 224px RGB      |
 | ResNet50 (TL)      | ~78–82%        | Higher accuracy, more compute      |
 
----
-
 ## 🤝 Acknowledgements
 - FER2013 dataset by Pierre-Luc Carrier & Aaron Courville
 - Preprocessing logic inspired by [GSNCodes (GitHub)](https://github.com/GSNCodes)
 - Keras DCGAN example - © Keras Team
 
----
-
 ## 📜 License
 This project is licensed under the MIT License - see LICENSE file for details.
-
----
 
 ## 📬 Contact
 - Questions? Reach out on [Instagram](https://www.instagram.com/utsanjan/)
