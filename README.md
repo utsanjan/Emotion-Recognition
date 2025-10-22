@@ -5,7 +5,7 @@
 [![](https://img.shields.io/github/languages/count/utsanjan/Emotion-Recognition?style=flat)](https://github.com/utsanjan/Emotion-Recognition/search?l=shell)‎ ‎
 [![](https://img.shields.io/github/languages/top/utsanjan/Emotion-Recognition?color=light%20green&style=flat)](https://github.com/utsanjan/Emotion-Recognition)‎ ‎
 
-This project provides a comprehensive end-to-end solution for detecting and classifying human emotions - such as happiness, sadness, and anger - based on facial expressions. By leveraging deep learning and computer vision techniques, this repository delivers a state-of-the-art implementation of Facial Emotion Recognition (FER). This repository implements **Facial Emotion Recognition (FER)** using:
+This project provides a comprehensive solution for detecting and classifying human emotions - such as happiness, sadness, and anger - through facial expressions. Utilizing advanced deep learning and computer vision techniques, it features a state-of-the-art implementation of Facial Emotion Recognition (FER) through:
 - **Convolutional Neural Networks (CNNs)** for baseline learning.
 - **Transfer Learning** with **MobileNetV2** and **ResNet50** for improved accuracy.
 - **MTCNN** for face detection & cropping.
