@@ -64,8 +64,6 @@ FER-Capstone/
 └── README.md
 ```
 
----
-
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repo
