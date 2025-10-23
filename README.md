@@ -20,110 +20,114 @@ This project provides a comprehensive solution for detecting and classifying hum
 ✅ Generate synthetic faces via DCGAN.  
 ✅ Create emotion-based melodies (MIDI).
 
-## 📂 Project Structure
-```
-FER-Capstone/
-│
-├── data/
-│   ├── fer2013.csv              # Original dataset (from Kaggle)
-│   ├── cropped_faces/           # Preprocessed dataset
-│   │   ├── train/<class>/
-│   │   └── val/<class>/
-│   └── sample_images/           # Optional test images
-│
-├── models/
-│   ├── baseline_cnn.h5
-│   └── mobilenet_emotion.h5
-│
-├── outputs/
-│   ├── figures/                 # Confusion matrices, plots
-│   ├── generated_faces/         # DCGAN samples
-│   └── generated_music/         # MIDI outputs
-│
-├── scripts/
-│   ├── preprocess.py
-│   ├── train_baseline.py
-│   ├── train_transfer.py
-│   ├── evaluate.py
-│   ├── webcam_demo.py
-│   ├── dcgan.py
-│   └── emotion_to_midi.py
-│
-├── utils/
-│   ├── mtcnn_face_crop.py
-│   └── data_loader.py
-│
-├── notebooks/
-│   ├── 01_preprocess.ipynb
-│   ├── 02_train_baseline.ipynb
-│   ├── 03_train_transfer.ipynb
-│   ├── 04_evaluate.ipynb
-│   └── 05_webcam_demo.ipynb
-│
-├── requirements.txt
-└── README.md
-```
-
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the repo
+Follow these steps to set up the project on your local system:
+
+### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/FER-Capstone.git
-cd FER-Capstone
+git clone https://github.com/<your-username>/<your-repo-name>.git
+cd <your-repo-name>
 ```
 
-### 2️⃣ Install dependencies
+### 2️⃣ Create and Activate a Virtual Environment
+It’s best to isolate dependencies for this project.
+
+**Windows (PowerShell):**
 ```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3️⃣ Install Required Dependencies
+Make sure you have Python 3.8+ installed.
+
+```bash
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Download dataset
-Download FER2013 from [Kaggle - nicolejyt/facialexpressionrecognition](https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition). And place it in:
+💡 **Note:** If you face issues with TensorFlow installation, install the correct version for your hardware:
 ```bash
-data/fer2013.csv
+pip install tensorflow==2.13.0  # CPU version
+pip install tensorflow-macos==2.13.0  # for Apple Silicon
 ```
 
-## 🧠 Preprocessing
-Convert FER CSV to cropped, normalized images:
-```bash
-python scripts/preprocess.py --csv data/fer2013.csv --out data/cropped_faces --target-size 224 --use-mtcnn
+### 4️⃣ Download the FER Dataset
+Use the FER-2013 dataset (or any compatible emotion dataset).
+
+📦 **FER-2013 Dataset (Kaggle):**  
+[https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition](https://www.kaggle.com/datasets/nicolejyt/facialexpressionrecognition)
+
+After downloading, place `fer2013.csv` in the `data/` folder:
+```
+project_root/
+├── data/
+│   └── fer2013.csv
 ```
 
-## 🏋️‍♂️ Training
-
-### Baseline CNN
+### 5️⃣ Preprocess the Data
+Run the preprocessing script to crop, clean, and organize images:
 ```bash
-python scripts/train_baseline.py --data data/cropped_faces --epochs 25 --batch 64
+python scripts/preprocess.py --csv data/fer2013.csv --out data/cropped_faces --use-mtcnn
 ```
 
-### Transfer Learning (MobileNetV2)
-```bash
-python scripts/train_transfer.py --data data/cropped_faces --arch mobilenet --epochs 30 --input-size 224
+This will generate a folder structure like:
+```
+data/
+├── cropped_faces/
+│   ├── train/
+│   ├── val/
+│   └── test/
 ```
 
-## 📊 Evaluation
-Generate confusion matrix and classification report:
+### 6️⃣ Train the Model
+You can train either the baseline CNN or transfer-learning model.
+
+**Baseline CNN:**
 ```bash
-python scripts/evaluate.py --model models/mobilenet_emotion.h5 --data data/cropped_faces/val
+python scripts/train_baseline.py
 ```
 
-## 🎥 Real-Time Demo
-Run live webcam emotion recognition:
+**Transfer Learning (e.g., MobileNet, VGG16, ResNet50):**
 ```bash
-python scripts/webcam_demo.py --model models/mobilenet_emotion.h5 --data-dir data/cropped_faces --input-size 224
-```
-Press `q` to quit webcam window.
-
-## 🧬 Optional - DCGAN (Face Generation)
-Train GAN to generate facial expressions:
-```bash
-python scripts/dcgan.py --data data/cropped_faces/train --out outputs/generated_faces --epochs 20000
+python scripts/train_transfer.py
 ```
 
-## 🎵 Optional - Emotion-to-Music
-Generate MIDI melody for any emotion:
+Trained models are automatically saved in the `models/` directory:
+```
+models/
+├── baseline_cnn.keras
+├── mobilenet_emotion.keras
+└── best_feature_extractor.keras
+```
+
+### 7️⃣ Evaluate the Model
+Generate metrics and a confusion matrix:
 ```bash
-python scripts/emotion_to_midi.py --emotion Happy --out outputs/generated_music/happy.mid
+python scripts/evaluate.py
+```
+
+### 8️⃣ Run the Real-Time Webcam Demo
+Once your model is trained, launch real-time emotion detection:
+```bash
+python scripts/webcam_demo.py
+```
+
+Press `q` to exit the webcam window.
+
+### 9️⃣ Optional - Emotion-to-Music
+If you’ve enabled the `emotion_to_midi` module, your webcam demo can auto-generate MIDI files based on detected emotions.
+
+Generated files are stored in:
+```
+outputs/midi/
 ```
 
 ## 🧾 Dataset References
