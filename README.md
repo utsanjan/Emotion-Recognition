@@ -26,8 +26,8 @@ Follow these steps to set up the project on your local system:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/utsanjan/Emotion-Recognition.git
+cd Emotion-Recognition
 ```
 
 ### 2️⃣ Create and Activate a Virtual Environment
@@ -88,7 +88,7 @@ data/
 ```
 
 ### 6️⃣ Train the Model
-You can train either the baseline CNN or transfer-learning model.
+You can train either the baseline CNN or the transfer-learning model.
 
 **Baseline CNN:**
 ```bash
@@ -103,8 +103,8 @@ python scripts/train_transfer.py
 Trained models are automatically saved in the `models/` directory:
 ```
 models/
-├── baseline_cnn.keras
-├── mobilenet_emotion.keras
+├── baseline_cnn.h5
+├── mobilenet_emotion.h5
 └── best_feature_extractor.keras
 ```
 
@@ -136,9 +136,9 @@ outputs/midi/
 
 ## 🧪 Tech Stack
 - Python 3.10+
-- TensorFlow / Keras
 - OpenCV
 - MTCNN
+- TensorFlow / Keras
 - Matplotlib / Seaborn
 - PrettyMIDI for audio generation
 
