@@ -118,7 +118,7 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Preprocess FER2013 or similar dataset")
     parser.add_argument("--csv", type=str, required=True, help="Path to fer2013.csv")
-    parser.add_argument("--out", type=str, default="data/cropped_faces", help="Output directory")
+    parser.add_argument("--out", type=str, default="../data/cropped_faces", help="Output directory")
     parser.add_argument("--target-size", type=int, default=224, help="Target image size")
     parser.add_argument("--use-mtcnn", action="store_true", help="Use MTCNN for face detection")
     args = parser.parse_args()
